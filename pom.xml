@@ -6,7 +6,7 @@
 
 	<groupId>com.wolfsoft.hr</groupId>
 	<artifactId>HumanResources</artifactId>
-	<name>HumanResourcesMS</name>
+	<name>HumanResources</name>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
