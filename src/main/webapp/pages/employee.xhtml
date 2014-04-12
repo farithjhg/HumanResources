@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+<head>
+</head>
+<body>
+
+	<ui:composition template="/templates/custom.xhtml">
+
+		<ui:define name="title">System Security</ui:define>
+
+		<ui:define name="body">
+			<h:form prependId="false" class="login-form">
+				<div class="header">
+					<h1>Human Resources Management Systems</h1>
+				</div>
+				<rich:panel header="Employees">
+					<h:panelGrid>
+						<div class="content">
+							<h:inputText id="firstName"
+								value="#{empleadoBean.employee.firstName}"
+								placeholder="FirstName" style="width:305px;" />
+							<h:inputText id="lastName"
+								value="#{empleadoBean.employee.lastName}" placeholder="LastName"
+								style="width:305px;" />
+							<h:selectOneMenu value="#{empleadoBean.employee.departmentId}"
+								placeholder="Departament" style="width:320px;">
+								<f:selectItem itemValue="" itemLabel="Departaments..." />
+								<f:selectItems value="#{empleadoBean.departaments}" />
+							</h:selectOneMenu>
+							<h:panelGroup>
+								<h:outputLabel for="date" value="Hire Date" styleClass="label" />
+								<h:inputText id="date" type="date" placeholder="yyyy-MM-dd"
+									value="#{empleadoBean.employee.hireDate}" style="width:240px;"
+									converterMessage="Format must be yyyy-MM-dd">
+									<f:convertDateTime pattern="yyyy-MM-dd" />
+								</h:inputText>
+							</h:panelGroup>
+							<h:inputText id="phone" value="#{empleadoBean.employee.phone}"
+								placeholder="Phone" style="width:305px;" />
+							<h:panelGroup>
+								<h:selectBooleanCheckbox id="check" />
+								<h:outputLabel for="check" value="Check" />
+							</h:panelGroup>
+							<h:selectManyCheckbox layout="pageDirection">
+								<f:selectItem itemValue="1" itemLabel="Item1" />
+								<f:selectItem itemValue="2" itemLabel="Item2" />
+							</h:selectManyCheckbox>
+							<h:selectOneRadio layout="pageDirection">
+								<f:selectItem itemValue="1" itemLabel="Si" />
+								<f:selectItem itemValue="2" itemLabel="No" />
+							</h:selectOneRadio>
+						</div>
+					</h:panelGrid>
+				</rich:panel>
+				<div class="footer">
+					<rich:toolbar height="26" itemSeparator="grid">
+						<rich:toolbarGroup location="right">
+							<h:commandButton styleClass="barsearchbutton" action="list"
+								value="Save/New" />
+							<h:commandButton styleClass="barsearchbutton" action="employee"
+								value="Save" />
+							<h:commandButton styleClass="barsearchbutton" action="employee"
+								value="Cancel" />
+						</rich:toolbarGroup>
+					</rich:toolbar>
+				</div>
+				<rich:messages globalOnly="true" />
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
