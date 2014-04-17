@@ -21,9 +21,6 @@ public class User implements Serializable {
 	@Column(name="display_name")
 	private String displayName;
 
-	@Column(name="user_activation_key")
-	private String userActivationKey;
-
 	@Column(name="user_email")
 	private String userEmail;
 
@@ -36,17 +33,9 @@ public class User implements Serializable {
 	@Column(name="user_pass")
 	private String userPass;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="user_registered")
-	private Date userRegistered;
-
 	@Column(name="user_status")
 	private int userStatus;
 
-	@Column(name="user_url")
-	private String userUrl;
-
-	//bi-directional many-to-one association to Rol
 	@ManyToOne
 	@JoinColumn(name="role_id")
 	private Rol rol;
@@ -68,14 +57,6 @@ public class User implements Serializable {
 
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
-	}
-
-	public String getUserActivationKey() {
-		return this.userActivationKey;
-	}
-
-	public void setUserActivationKey(String userActivationKey) {
-		this.userActivationKey = userActivationKey;
 	}
 
 	public String getUserEmail() {
@@ -110,28 +91,12 @@ public class User implements Serializable {
 		this.userPass = userPass;
 	}
 
-	public Date getUserRegistered() {
-		return this.userRegistered;
-	}
-
-	public void setUserRegistered(Date userRegistered) {
-		this.userRegistered = userRegistered;
-	}
-
 	public int getUserStatus() {
 		return this.userStatus;
 	}
 
 	public void setUserStatus(int userStatus) {
 		this.userStatus = userStatus;
-	}
-
-	public String getUserUrl() {
-		return this.userUrl;
-	}
-
-	public void setUserUrl(String userUrl) {
-		this.userUrl = userUrl;
 	}
 
 	public Rol getRol() {
