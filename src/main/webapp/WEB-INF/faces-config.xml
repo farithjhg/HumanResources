@@ -5,4 +5,15 @@
 	<factory>
 		<render-kit-factory>org.omnifaces.renderkit.Html5RenderKitFactory</render-kit-factory>
 	</factory>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>LOGIN</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>HOME</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

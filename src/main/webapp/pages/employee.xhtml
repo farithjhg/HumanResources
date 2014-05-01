@@ -4,6 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:rich="http://richfaces.org/rich">
 <head>
 </head>
@@ -19,7 +20,7 @@
 					<h1>Human Resources Management Systems</h1>
 				</div>
 				<rich:panel header="Employees">
-					<h:panelGrid>
+					<h:panelGrid columns="2">
 						<div class="content">
 							<h:inputText id="firstName"
 								value="#{empleadoBean.employee.firstName}"

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<title>Human Resources Management Systems</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:outputStylesheet library="css" name="application.css" target="head" />
+		<div id="page">
+			<div id="header" align="center" style="padding: 5px;">
+				<div class="right-controls">
+					<ul class="top-links layout">
+						<li><h:commandButton value="Logout" immediate="true"
+								action="#{loginBean.logout}" /></li>
+					</ul>
+				</div>
+			</div>
+			<div id="page-content">
+				<div class="left-menu">
+					<ui:include src="/templates/includes/navigation.xhtml" />
+				</div>
+				<div class="content-container">
+					<ui:insert name="body">
+                        Body content missed
+                    </ui:insert>
+				</div>
+				<a4j:log popup="true" level="ERROR" style="width: 800px; height: 300px;"/>
+			</div>
+			<div id="footer" align="center">
+				Copyright © All Rights Reserved - Wolfsoft 2014<br /> Help and
+				Support Anywhere and Anytime
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

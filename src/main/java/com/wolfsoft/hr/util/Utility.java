@@ -59,6 +59,7 @@ public class Utility {
 
 	public static String logout(String bean) {
 		removerBeanSession(bean);
+		cerrarSesion();
 		return "LOGIN";
 	}
 
@@ -68,7 +69,7 @@ public class Utility {
 	}
 
 
-	public void cerrarSesion() {
+	public static void cerrarSesion() {
 		if (getSession() != null) {
 			getSession().invalidate();
 		}

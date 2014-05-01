@@ -209,8 +209,8 @@ CONTENT
 
 
 /* Second input field */
-.login-form .content .password, .login-form .content .pass-icon {
-	margin-top: 25px;
+.login-form .content .username .password, .login-form .content .pass-icon {
+	margin-top: 10px;
 }
 
 .login-form .content .input:hover {
@@ -243,12 +243,12 @@ CONTENT
 }
 
 .user-icon {
-	top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	top:174px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
 	background: rgba(65,72,72,0.75) url(../images/user-icon.png) no-repeat center;	
 }
 
 .pass-icon {
-	top:201px;
+	top:231px;
 	background: rgba(65,72,72,0.75) url(../images/pass-icon.png) no-repeat center;
 }
 

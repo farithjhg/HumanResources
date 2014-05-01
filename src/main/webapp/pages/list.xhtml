@@ -8,7 +8,7 @@
 <head>
 </head>
 <body>
-	<ui:composition template="/templates/custom.xhtml">
+	<ui:composition template="/templates/desktopTemplate.xhtml">
 		<ui:define name="title">Employees List</ui:define>
 		<ui:define name="body">
 			<h:form prependId="false" class="login-form">
@@ -16,17 +16,27 @@
 					<h1>Employees List</h1>
 				</div>
 				<rich:dataTable var="emp" value="#{empleadoBean.employees}"
-					style="width : 100%">
+					style="width : 100%" id="table">
 					<rich:column headerClass="left">
-						<a4j:commandLink styleClass="no-decor" action="employee" value="View"/>
+						<a4j:commandLink styleClass="no-decor" action="employee"
+							value="View" />
 
 					</rich:column>
-					<rich:column headerClass="left">
-						<f:facet name="header">EmployeeId</f:facet>
+					<rich:column id="id" headerClass="left" sortBy="#{emp.employeeId}"
+						sortOrder="#{empleadoBean.employeeIdOrder}">
+						<f:facet name="header">
+							<a4j:commandLink value="EmployeeId" render="table"
+								action="#{empleadoBean.sortByEmployeeId}" />
+						</f:facet>
                 #{emp.employeeId}
             </rich:column>
-					<rich:column headerClass="left">
-						<f:facet name="header">FirstName</f:facet>
+					<rich:column headerClass="left" sortBy="#{emp.firstName}"
+						sortOrder="#{empleadoBean.firstNameOrder}">
+						<f:facet name="header">
+							<a4j:commandLink value="Firstname" render="table"
+								action="#{empleadoBean.sortByFirstName}" />
+						</f:facet>
+						
                 #{emp.firstName}
             </rich:column>
 					<rich:column styleClass="landscape" headerClass="left landscape">
@@ -38,6 +48,41 @@
                 #{emp.phone}
             </rich:column>
 				</rich:dataTable>
+				
+
+			<rich:popupPanel header="Edit Rol Details" id="editPane" modal="true"
+				resizeable="true" onmaskclick="#{rich:component('editPane')}.hide()"
+				width="400" height="130">
+				<h:panelGrid columns="2" columnClasses="label,campo" width="100%"
+					id="editGrid">
+					<h:outputLabel for="txtRoleId" value="* Id" />
+					<h:inputText id="txtRoleId" size="15" maxlength="10"
+						required="true" requiredMessage="Id: Field required"
+						value="#{listaRolBean.rol.roleId}" />
+					<h:outputLabel for="txtRoleName" value="* Name" />
+					<h:inputText id="txtRoleName" size="30" maxlength="20"
+						required="true" requiredMessage="Name: Field required"
+						value="#{listaRolBean.rol.roleName}" />
+				</h:panelGrid>
+				<rich:toolbar height="26" itemSeparator="grid">
+					<rich:toolbarGroup location="left">
+						<h:outputText value="* Required Fields" />
+					</rich:toolbarGroup>
+					<rich:toolbarGroup location="right">
+						<h:commandButton value="Grabar" action="#{listaRolBean.grabar}" styleClass="button" />
+
+						<a4j:commandButton id="btnSave" value="Store"
+							action="#{listaRolBean.grabar}" render="tabla" execute="editPane"
+							oncomplete="#{rich:component('editPane')}.hide();" />
+
+						<a4j:commandButton value="Cancel"
+							onclick="#{rich:component('editPane')}.hide(); return false;" />
+					</rich:toolbarGroup>
+				</rich:toolbar>
+				<rich:messages globalOnly="true" ajaxRendered="true" />
+			</rich:popupPanel>
+
+				
 				<rich:messages globalOnly="true" />
 			</h:form>
 		</ui:define>

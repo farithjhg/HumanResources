@@ -13,23 +13,26 @@
 		<ui:define name="body">
 			<h:form prependId="false" class="login-form">
 				<div class="header">
-					<h:graphicImage url="resources/images/logo.png" height="60px"
+					<h:graphicImage url="/resources/images/logo.png" height="60px"
 						width="250px" alt="MyAsesor Web" />
 					<span>Seguridad del Sistema</span>
 				</div>
 				<div class="content">
-					<h:inputText id="userName" value="#{loginBean.userName}"
+					<h:outputLabel for="userName" value="Username" />
+					<h:inputText id="userName" value="#{loginBean.userName}" required="true" requiredMessage="Username: Please fill out this field"
 						placeholder="Username" class="input username" />
-					<div class="user-icon"></div>
-					<h:inputSecret id="password" value="#{loginBean.passWord}"
+					<div class="user-icon"/>
+					<h:outputLabel for="password" value="Password" />
+					<h:inputSecret id="password" value="#{loginBean.passWord}" required="true" requiredMessage="Password: Please fill out this field"
 						placeholder="Password" class="input password" />
 					<div class="pass-icon"></div>
 				</div>
 				<div class="footer">
-					<h:commandButton action="pages/employee" value="Login"
+					<h:commandButton action="#{loginBean.login}" value="Login"
 						class="button" />
 				</div>
-				<rich:messages globalOnly="true" />
+				<rich:messages globalOnly="false" styleClass="error_message"/>
+				<rich:notifyMessages stayTime="2000" nonblocking="true" />
 			</h:form>
 		</ui:define>
 	</ui:composition>

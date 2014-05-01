@@ -52,11 +52,11 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<!-- Setting this property using archetype-metadata.xml requiredPorperty 
 			so that generated project uses correct version of richfaces. -->
-		<org.richfaces.bom.version>4.2.0.Final</org.richfaces.bom.version>
+		<org.richfaces.bom.version>4.3.6.Final</org.richfaces.bom.version>
 	</properties>
 
 	<build>
-		<finalName>HumanResourcesMS</finalName>
+		<finalName>HumanResources</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -129,6 +129,14 @@
 			<artifactId>omnifaces</artifactId>
 			<version>1.7</version> <!-- Or 1.8-SNAPSHOT -->
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
 		<!-- JPA -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -149,6 +157,22 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.0.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons-core</artifactId>
+			<version>1.4.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.2.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>

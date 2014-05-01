@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<h:head>
+	<title>HRMS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<!-- enable full-screen mode -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- controls the appearance of the status bar in full-screen mode -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<script type="text/javascript"
+		src="#{facesContext.externalContext.requestContextPath}/resources/js/mobile/slidfast.js"></script>
+	<script type="text/javascript">
+		//initialize mobile RichFaces with slidfast
+		slidfast({
+			defaultPageID : 'home-page',
+			callback : 'handleHashChange',
+			backButtonID : 'back-button'
+		});
+		
+		// <![CDATA[
+        //TODO - create global .js to be used only for mobile devices
+        function hideURLbar()
+        {
+           setTimeout(scrollTo, 0, 0, 1);
+        }
+
+        function supports_web_workers() {
+          return !!window.Worker;
+        }
+
+        function supports_local_storage() {
+          try {
+            return 'localStorage' in window && window['localStorage'] !== null;
+          } catch(e){
+            return false;
+          }
+        }
+        // ]]>		
+	</script>
+
+
+</h:head>
+
+<h:body>
+	<link rel="stylesheet"
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/mobile/form.css" />
+	<div id="page">
+		<div id="header" align="center" style="padding: 5px;">
+			<h:graphicImage url="resources/images/hr_systems_banner.png"
+				height="100px" width="750px"
+				alt="Human Resources Management Systems" />
+			<div class="right-controls">
+			</div>
+		</div>
+		<div id="page-content">
+			<div class="left-menu">
+				<ui:include src="/templates/includes/navigationTablet.xhtml" />
+			</div>
+			<div class="content-container">
+				<ui:insert name="body">
+                        Body content missed
+                    </ui:insert>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="footer" align="center">
+			<p>Copyright © All Rights Reserved - Wolfsoft 2014</p>
+		</div>
+	</div>
+</h:body>
+</html>
