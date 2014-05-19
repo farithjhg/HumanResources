@@ -20,11 +20,15 @@
 				<div class="content">
 					<h:outputLabel for="userName" value="Username" />
 					<h:inputText id="userName" value="#{loginBean.userName}" required="true" requiredMessage="Username: Please fill out this field"
-						placeholder="Username" class="input username" />
+						class="input username" >
+                                            <rich:placeholder value="Username"/>
+                                        </h:inputText>
 					<div class="user-icon"/>
 					<h:outputLabel for="password" value="Password" />
 					<h:inputSecret id="password" value="#{loginBean.passWord}" required="true" requiredMessage="Password: Please fill out this field"
-						placeholder="Password" class="input password" />
+						class="input password" >
+                                            <rich:placeholder value="Password"/>
+                                        </h:inputSecret>
 					<div class="pass-icon"></div>
 				</div>
 				<div class="footer">

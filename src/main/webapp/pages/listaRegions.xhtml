@@ -88,7 +88,7 @@
 				<a4j:commandButton value="Delete" onclick="remove(); return false;" />
 			</rich:popupPanel>
 
-			<rich:popupPanel header="Edit row Details" id="editPane" render="#{listaRegionsBean.regions!=null}"
+                        <rich:popupPanel header="Edit row Details" id="editPane" rendered="#{listaRegionsBean.regions!=null}"
 				domElementAttachment="parent" width="400" height="170">
 				<h:panelGrid columns="3" id="editGrid">
 					<h:outputText value="Region Id" />

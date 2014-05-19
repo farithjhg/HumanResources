@@ -205,7 +205,7 @@ input[type=text], input[type=password] ,.register select,.register textarea {
   border-style: solid;
   border-color: #c4c4c4 #d1d1d1 #d4d4d4;
   border-radius:3px;
-  --webkit-border-radius: 5px;
+  -webkit-border-radius: 5px;
   outline:3px solid rgba(200, 105, 137, 0.09);
   -moz-outline-radius:7px;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);

@@ -1,33 +1,34 @@
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich"
-	template="/templates/phoneTemplate.xhtml">
-	<ui:define name="head">
-		<ui:insert name="head" />
-	</ui:define>
-	<ui:param name="onLoadFunction" value="hideURLbar()" />
-	<ui:define name="body">
-		<h:form prependId="false" class="login-form">
-			<div class="header" align="center">
-				<h2>Human Resources</h2>
-				<h3>Management Systems</h3>
-			</div>
-			<rich:panel id="panel1" header="Options Menu" style="width:100%">
-				<rich:panelMenu style="width:200px" mode="ajax">
-					<rich:panelMenuGroup label="Manager Tools" expanded="true">
-						<rich:panelMenuItem action="mobile/listEmployee" label="List Mobile Employees" />
-					</rich:panelMenuGroup>
-				</rich:panelMenu>
-			</rich:panel>
-			<div class="footer" align="center">
-				<p>Copyright © All Rights Reserved - Wolfsoft 2014</p>
-			</div>
-			<rich:messages globalOnly="true" />
-		</h:form>
-	</ui:define>
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+                template="/templates/phoneTemplate.xhtml">
+    <ui:define name="head">
+        <ui:insert name="head" />
+    </ui:define>
+    <ui:param name="onLoadFunction" value="hideURLbar()" />
+    <ui:define name="body">
+        <h:form prependId="false" class="login-form">
+            <div class="header" align="center">
+                <h2>Human Resources</h2>
+                <h3>Management Systems</h3>
+            </div>
+            <rich:panel id="panel1" header="Options Menu" style="width:100%">
+                <rich:panelMenu style="width:200px" itemMode="ajax" groupMode="ajax" 
+                                groupExpandedLeftIcon="triangleUp">
+                    <rich:panelMenuGroup label="Manager Tools" expanded="true">
+                        <rich:panelMenuItem action="mobile/listEmployee" label="List Mobile Employees" />
+                    </rich:panelMenuGroup>
+                </rich:panelMenu>
+            </rich:panel>
+            <div class="footer" align="center">
+                <p>Copyright © All Rights Reserved - Wolfsoft 2014</p>
+            </div>
+            <rich:messages globalOnly="true" />
+        </h:form>
+    </ui:define>
 </ui:composition>

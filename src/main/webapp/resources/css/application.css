@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #94aebc url('#{facesContext.externalContext.requestContextPath}/resources/images/bg.png') left bottom repeat;
+    background: #94aebc url('/HumanResources/resources/images/bg.png') left bottom repeat;
     font: normal 12px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
     height: 100%;
 }
@@ -38,7 +38,7 @@ p {
 }
 
 #header {
-    background: url('#{facesContext.externalContext.requestContextPath}/resources/images/header_bg.png') no-repeat top left;
+    background: url('/HumanResources/resources/images/header_bg.png') no-repeat top left;
     height: 105px;
 }
 
@@ -67,7 +67,7 @@ p {
 }
 
 #header ul.top-links li a {
-    background: url('#{facesContext.externalContext.requestContextPath}/resources/images/sep.gif') center right no-repeat;
+    background: url('/HumanResources/resources/images/sep.gif') center right no-repeat;
     color: #fff;
     padding: 0 8px 0 3px;
     font: 11px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
@@ -121,11 +121,11 @@ p {
 }
 
 #header ul#skin-menu li.current-skin {
-    background: url('#{facesContext.externalContext.requestContextPath}/resources/images/select-skin-button.png') left -75px no-repeat;
+    background: url('/HumanResources/resources/images/select-skin-button.png') left -75px no-repeat;
 }
 
 #header ul#skin-menu li.current-skin span {
-    background: url('#{facesContext.externalContext.requestContextPath}/resources/images/select-skin-button.png') right 0 repeat-x;
+    background: url('/HumanResources/resources/images/select-skin-button.png') right 0 repeat-x;
     color: #fff;
 }
 
@@ -134,9 +134,9 @@ p {
 }
 
 #page-content {
-    background: url('#{facesContext.externalContext.requestContextPath}/resources/images/page-bg.png') 0 0 repeat-y;
+    background: url('/HumanResources/resources/images/page-bg.png') 0 0 repeat-y;
     height: 100%;
-    min-height: 490px;
+    min-height: 480px;
     padding: 13px 20px 5px;
 }
 
@@ -167,7 +167,7 @@ p {
 }
 
 #footer {
-    background: url('#{facesContext.externalContext.requestContextPath}/resources/images/footer.png') top left no-repeat; 
+    background: url('/HumanResources/resources/images/footer.png') top left no-repeat; 
     color: #000000;
     text-align: center;
     padding: 15px 20px 10px;
@@ -196,12 +196,12 @@ a.show,a.hide {
 }
 
 .left-menu .rf-pm .rf-pm-top-gr-hdr {
-    background: #c6cacc url(#{facesContext.externalContext.requestContextPath}/resources/images/pmenu_bg.png) left top repeat-x;
+    background: #c6cacc url(/HumanResources/resources/images/pmenu_bg.png) left top repeat-x;
     padding: 3px 1px 2px 3px;
 }
 
 .left-menu .rf-pm .rf-pm-top-gr-hdr:hover {
-    background: #c6cacc url(#{facesContext.externalContext.requestContextPath}/resources/images/pmenu_bg.png) left top repeat-x;
+    background: #c6cacc url(/HumanResources/resources/images/pmenu_bg.png) left top repeat-x;
 }
 
 .left-menu .rf-pm .rf-pm-top-gr-ico {
@@ -279,7 +279,7 @@ a.show,a.hide {
 }
 
 .navigation .rf-tab-hdr-inact {
-    background: #c6cacc url(#{facesContext.externalContext.requestContextPath}/resources/images/pmenu_bg.png) left top repeat-x;
+    background: #c6cacc url(/HumanResources/resources/images/pmenu_bg.png) left top repeat-x;
     border: 1px solid #bec3c7;
 }
 

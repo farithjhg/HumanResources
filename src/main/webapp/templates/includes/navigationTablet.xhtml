@@ -7,7 +7,8 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 	<rich:panel id="panel1" header="Options Menu"
 		style="width:240px">
-		<rich:panelMenu style="width:200px" mode="ajax">
+		<rich:panelMenu style="width:200px" itemMode="ajax" groupMode="ajax" 
+                            groupExpandedLeftIcon="triangleUp">
 			<rich:panelMenuGroup label="Manager Tools" expanded="true">
 				<rich:panelMenuItem action="mobile/listEmployee" label="List Tablet Employees" />
 			</rich:panelMenuGroup>

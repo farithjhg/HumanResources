@@ -3,8 +3,6 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:rich="http://richfaces.org/rich">
 <head>
 </head>
@@ -24,25 +22,25 @@
 						<div class="content">
 							<h:inputText id="firstName"
 								value="#{empleadoBean.employee.firstName}"
-								placeholder="FirstName" style="width:305px;" />
+								style="width:305px;" />
 							<h:inputText id="lastName"
-								value="#{empleadoBean.employee.lastName}" placeholder="LastName"
+								value="#{empleadoBean.employee.lastName}" 
 								style="width:305px;" />
 							<h:selectOneMenu value="#{empleadoBean.employee.departmentId}"
-								placeholder="Departament" style="width:320px;">
+								style="width:320px;">
 								<f:selectItem itemValue="" itemLabel="Departaments..." />
 								<f:selectItems value="#{empleadoBean.departaments}" />
 							</h:selectOneMenu>
 							<h:panelGroup>
 								<h:outputLabel for="date" value="Hire Date" styleClass="label" />
-								<h:inputText id="date" type="date" placeholder="yyyy-MM-dd"
+								<h:inputText id="date"  
 									value="#{empleadoBean.employee.hireDate}" style="width:240px;"
 									converterMessage="Format must be yyyy-MM-dd">
 									<f:convertDateTime pattern="yyyy-MM-dd" />
 								</h:inputText>
 							</h:panelGroup>
 							<h:inputText id="phone" value="#{empleadoBean.employee.phone}"
-								placeholder="Phone" style="width:305px;" />
+								style="width:305px;" />
 							<h:panelGroup>
 								<h:selectBooleanCheckbox id="check" />
 								<h:outputLabel for="check" value="Check" />

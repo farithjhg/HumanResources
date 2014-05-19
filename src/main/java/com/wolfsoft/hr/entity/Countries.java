@@ -22,9 +22,7 @@ public class Countries implements Serializable {
     private String countryId;
     @Column(name="country_name")
     private String countryName;
-    @Column(name="region_id")
-    private Integer regionId;
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "region_id", referencedColumnName = "region_id" , insertable=false, updatable=false)
     private Regions regions;
     @OneToMany(mappedBy = "countries")
@@ -48,14 +46,6 @@ public class Countries implements Serializable {
 
     public void setCountryName(String countryName){
         this.countryName = countryName;
-    }
-
-    public Integer getRegionId(){
-        return regionId;
-    }
-
-    public void setRegionId(Integer regionId){
-        this.regionId = regionId;
     }
 
     public Regions  getRegions(){

@@ -1,123 +1,119 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:rich="http://richfaces.org/rich"
-	xmlns:a4j="http://richfaces.org/a4j">
-<ui:composition template="/templates/desktopTemplate.xhtml">
-	<ui:define name="pageTitle">Listado de Countries</ui:define>
-	<ui:define name="pageHeader">Listado de Countries</ui:define>
-	<ui:define name="body">
-		<h:form id="form1">
-			<h:inputHidden value="#{listaCountriesBean.tipoEdicion}"
-				id="operacion" />
-			<rich:panel id="edicion" rendered="#{listaCountriesBean.edicion}">
-				<f:facet name="header">
-					<h:outputText value="Countries" />
-				</f:facet>
-				<h:panelGrid columns="2" columnClasses="label,campo" width="100%">
-					<h:outputLabel for="txtRegionId" value="Region" />
-					<h:selectOneMenu value="#{listaCountriesBean.countries.regionId}"
-						id="txtRegionId" style="width:320px;">
-						<f:selectItem itemValue="" itemLabel="Regions..." />
-						<f:selectItems value="#{listaCountriesBean.regions}" />
-					</h:selectOneMenu>
-					<h:outputLabel for="txtCountryId" value="* Country Id" />
-					<h:inputText id="txtCountryId" size="3" maxlength="2"
-						required="true" value="#{listaCountriesBean.countries.countryId}" />
-					<h:outputLabel for="txtCountryName" value="Country Name" />
-					<h:inputText id="txtCountryName" size="60" maxlength="40"
-						value="#{listaCountriesBean.countries.countryName}" />
-				</h:panelGrid>
-				<rich:toolbar height="26" itemSeparator="grid">
-					<rich:toolbarGroup location="left">
-						<h:outputText value="* Required Fields" />
-					</rich:toolbarGroup>
-					<rich:toolbarGroup location="right">
-						<h:commandButton value="Grabar"
-							actionListener="#{listaCountriesBean.grabar}" styleClass="button" />
-						<h:commandButton value="Cancelar" immediate="true"
-							actionListener="#{listaCountriesBean.cancelar}"
-							styleClass="button" />
-					</rich:toolbarGroup>
-				</rich:toolbar>
-			</rich:panel>
-			<h:panelGrid columns="1" width="100%"
-				rendered="#{!listaCountriesBean.edicion}">
-				<rich:toolbar height="26" itemSeparator="grid">
-					<rich:toolbarGroup location="left">
-						<h:outputText value="Manage Countries" />
-					</rich:toolbarGroup>
-					<rich:toolbarGroup location="right">
-						<h:commandButton value="New" id="btnNuevo"
-							styleClass="button_barra"
-							actionListener="#{listaCountriesBean.nuevo}" />
-						<h:commandButton styleClass="button_barra" value="Back"
-							immediate="true" action="#{listaCountriesBean.regresar}" />
-					</rich:toolbarGroup>
-				</rich:toolbar>
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+    <ui:composition template="/templates/desktopTemplate.xhtml">
+        <ui:define name="pageTitle">Listado de Countries</ui:define>
+        <ui:define name="pageHeader">Listado de Countries</ui:define>
+        <ui:define name="body">
+            <h:form id="form1">
+                <h:inputHidden value="#{listaCountriesBean.tipoEdicion}"
+                               id="operacion" />
+                <rich:panel id="edicion" rendered="#{listaCountriesBean.edicion}">
+                    <f:facet name="header">
+                        <h:outputText value="Countries" />
+                    </f:facet>
+                    <h:panelGrid columns="2" columnClasses="label,campo" width="100%">
+                        <h:outputLabel for="txtRegionId" value="Region" />
+                        <h:selectOneMenu value="#{listaCountriesBean.countries.regions.regionId}"
+                                         id="txtRegionId" style="width:320px;">
+                            <f:selectItem itemValue="" itemLabel="Regions..." />
+                            <f:selectItems value="#{listaCountriesBean.regions}" />
+                        </h:selectOneMenu>
+                        <h:outputLabel for="txtCountryId" value="* Country Id" />
+                        <h:inputText id="txtCountryId" size="3" maxlength="2"
+                                     required="true" value="#{listaCountriesBean.countries.countryId}" />
+                        <h:outputLabel for="txtCountryName" value="Country Name" />
+                        <h:inputText id="txtCountryName" size="60" maxlength="40"
+                                     value="#{listaCountriesBean.countries.countryName}" />
+                    </h:panelGrid>
+                    <rich:toolbar height="26" itemSeparator="grid">
+                        <rich:toolbarGroup location="left">
+                            <h:outputText value="* Required Fields" />
+                        </rich:toolbarGroup>
+                        <rich:toolbarGroup location="right">
+                            <h:commandButton value="Grabar"
+                                             actionListener="#{listaCountriesBean.grabar}" styleClass="button" />
+                            <h:commandButton value="Cancelar" immediate="true"
+                                             actionListener="#{listaCountriesBean.cancelar}"
+                                             styleClass="button" />
+                        </rich:toolbarGroup>
+                    </rich:toolbar>
+                </rich:panel>
+                <h:panelGrid columns="1" width="100%"
+                             rendered="#{!listaCountriesBean.edicion}">
+                    <rich:toolbar height="26" itemSeparator="grid">
+                        <rich:toolbarGroup location="left">
+                            <h:outputText value="Manage Countries" />
+                        </rich:toolbarGroup>
+                        <rich:toolbarGroup location="right">
+                            <h:commandButton value="New" id="btnNuevo"
+                                             styleClass="button_barra"
+                                             actionListener="#{listaCountriesBean.nuevo}" />
+                            <h:commandButton styleClass="button_barra" value="Back"
+                                             immediate="true" action="#{listaCountriesBean.regresar}" />
+                        </rich:toolbarGroup>
+                    </rich:toolbar>
 
-				<rich:dataTable id="tabla" style="overflow:auto; width: 100%;"
-					rows="10" onRowMouseOver="this.style.backgroundColor='threedface'"
-					onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
-					columnClasses="colNombre,colNombre,colDescCorta,colBoton,colBoton,colBoton"
-					binding="#{listaCountriesBean.dtItems}"
-					value="#{listaCountriesBean.listaDatos}" var="row">
-					<rich:column>
-						<f:facet name="header">
-							<h:outputText value="Country Id" title="Country Id" />
-						</f:facet>
-						<h:outputText styleClass="headerText" value="#{row.countryId}" />
-					</rich:column>
-					<rich:column>
-						<f:facet name="header">
-							<h:outputText value="Country Name" title="Country Name" />
-						</f:facet>
-						<h:outputText styleClass="headerText" value="#{row.countryName}" />
-					</rich:column>
-					<rich:column>
-						<f:facet name="header">
-							<h:outputText value="Regions Id" title="Regions Id" />
-						</f:facet>
-						<h:outputText styleClass="headerText" value="#{row.regionId}" />
-					</rich:column>
-					<rich:column style="width: 10px">
-						<f:facet name="header" />
-						<h:commandLink id="linkModificar"
-							action="#{listaCountriesBean.modificar}">
-							<h:graphicImage value="/resources/images/page_edit.png"
-								alt="Modificar" />
-						</h:commandLink>
-					</rich:column>
-					<rich:column style="width: 10px">
-						<f:facet name="header" />
-						<a4j:commandLink id="linkEliminar" execute="@this" render="@none"
-							oncomplete="#{rich:component('confirmPane')}.show()">
-							<h:graphicImage value="/resources/images/delete.gif" alt="delete" />
-							<a4j:param value="#{it.index}"
-								assignTo="#{listaCountriesBean.rowSelected}" />
-						</a4j:commandLink>
-						<h:commandLink id="linkEliminar2"
-							onclick="return confirm('¿Desea realmente Eliminar este Registro?');"
-							actionListener="#{listaCountriesBean.eliminar}">
-							<h:graphicImage value="/resources/images/cross.gif"
-								alt="Eliminar" />
-						</h:commandLink>
-					</rich:column>
-				</rich:dataTable>
-			</h:panelGrid>
-			<a4j:jsFunction name="remove" action="#{listaCountriesBean.remove}"
-				render="table" execute="@this"
-				oncomplete="#{rich:component('confirmPane')}.hide();" />
+                    <rich:dataTable id="tabla" style="overflow:auto; width: 100%;"
+                                    rows="10" columnClasses="colNombre,colNombre,colDescCorta,colBoton,colBoton,colBoton"
+                                    binding="#{listaCountriesBean.dtItems}"
+                                    value="#{listaCountriesBean.listaDatos}" var="row">
+                        <rich:column>
+                            <f:facet name="header">
+                                <h:outputText value="Country Id" title="Country Id" />
+                            </f:facet>
+                            <h:outputText styleClass="headerText" value="#{row.countryId}" />
+                        </rich:column>
+                        <rich:column>
+                            <f:facet name="header">
+                                <h:outputText value="Country Name" title="Country Name" />
+                            </f:facet>
+                            <h:outputText styleClass="headerText" value="#{row.countryName}" />
+                        </rich:column>
+                        <rich:column>
+                            <f:facet name="header">
+                                <h:outputText value="Regions" title="Regions" />
+                            </f:facet>
+                            <h:outputText styleClass="headerText" value="#{row.regions.regionName}" />
+                        </rich:column>
+                        <rich:column style="width: 10px">
+                            <f:facet name="header" />
+                            <h:commandLink id="linkModificar"
+                                           actionListener="#{listaCountriesBean.modificar}">
+                                <h:graphicImage value="/resources/images/page_edit.png"
+                                                alt="Modificar" />
+                            </h:commandLink>
+                        </rich:column>
+                        <rich:column style="width: 10px">
+                            <f:facet name="header" />
+                            <h:commandLink id="linkEliminar2"
+                                           onclick="return confirm('¿Desea realmente Eliminar este Registro?');"
+                                           actionListener="#{listaCountriesBean.eliminar}">
+                                <h:graphicImage value="/resources/images/cross.gif"
+                                                alt="Eliminar" />
+                            </h:commandLink>
+                        </rich:column>
+                        <f:facet name="footer">
+                            <rich:dataScroller for="tabla" maxPages="20" id="sc1"
+                                               style="width: 100%;" />
+                        </f:facet>                        
+                    </rich:dataTable>
+                </h:panelGrid>
+                <a4j:jsFunction name="remove" action="#{listaCountriesBean.remove}"
+                                render="table" execute="@this"
+                                oncomplete="#{rich:component('confirmPane')}.hide();" />
 
-			<rich:popupPanel id="statPane" autosized="true">
-				<h:graphicImage value="/resources/images/ai.gif" alt="ai" />
-				<h:outputText value="Please wait..." />
-			</rich:popupPanel>
-			<rich:messages globalOnly="true" ajaxRendered="true" />
-		</h:form>
+                <rich:popupPanel id="statPane" autosized="true">
+                    <h:graphicImage value="/resources/images/ai.gif" alt="ai" />
+                    <h:outputText value="Please wait..." />
+                </rich:popupPanel>
+                <rich:messages globalOnly="true" ajaxRendered="true" />
+            </h:form>
 
-	</ui:define>
-</ui:composition>
+        </ui:define>
+    </ui:composition>
 </html>
